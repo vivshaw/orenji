@@ -28,5 +28,5 @@ private:
 	void parameterChanged(const String& parameterID, float newValue) override;
 
 	double level = 0.0, tailOff = 0.0;
-	double m_time, m_deltaTime, m_frequency, m_OSCInterval;
+	double m_time, m_deltaTime;
 };

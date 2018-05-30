@@ -7,7 +7,7 @@
 //==============================================================================
 /**
 */
-class OrenjiAudioProcessor  : public AudioProcessor, private AudioProcessorValueTreeState::Listener
+class OrenjiAudioProcessor  : public AudioProcessor
 {
 public:
     //==============================================================================
@@ -53,8 +53,6 @@ public:
 
 private:
     //==============================================================================
-	void parameterChanged(const String& parameterID, float newValue) override;
-
 	Synthesiser synth;
 	
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OrenjiAudioProcessor)

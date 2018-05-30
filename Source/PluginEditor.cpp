@@ -37,6 +37,9 @@ OrenjiAudioProcessorEditor::OrenjiAudioProcessorEditor (OrenjiAudioProcessor& p)
 
 	addAndMakeVisible(oscOneFine);
 	fineAttachment.reset(new AudioProcessorValueTreeState::SliderAttachment(processor.parameters, "osc1_fine", oscOneFine));
+
+	addAndMakeVisible(oscOneCoarse);
+	coarseAttachment.reset(new AudioProcessorValueTreeState::SliderAttachment(processor.parameters, "osc1_coarse", oscOneCoarse));
 }
 
 OrenjiAudioProcessorEditor::~OrenjiAudioProcessorEditor()
@@ -55,4 +58,5 @@ void OrenjiAudioProcessorEditor::resized()
 	oscOneMenu.setBounds(10, 10, getWidth() / 2 - 10, 40);
 	oscTwoMenu.setBounds(getWidth() / 2, 10, getWidth() / 2 - 10, 40);
 	oscOneFine.setBounds(100, 100, getWidth() / 2 - 10, 40);
+	oscOneCoarse.setBounds(100, 200, getWidth() / 2 - 10, 40);
 }

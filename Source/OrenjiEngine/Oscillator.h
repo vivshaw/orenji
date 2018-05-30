@@ -16,7 +16,7 @@ public:
 	~Oscillator() = default;
 
 	// tune OSC to this frequence in HZ
-	void tune(double frequency);
+	void tune(int midiNote);
 	void setWaveform(int waveform);
 
 	// generate one sample
@@ -27,7 +27,7 @@ public:
 private:
 	void parameterChanged(const String& parameterID, float newValue) override;
 
-	double m_amplitude, m_frequency, m_phase, m_fine;
+	double m_amplitude, m_frequency, m_phase, m_fine, m_coarse;
 
 	std::map<std::string, std::string> m_boundParams;
 	

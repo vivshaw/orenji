@@ -40,5 +40,8 @@ private:
 	Slider oscOneFine;
 	std::unique_ptr<AudioProcessorValueTreeState::SliderAttachment> fineAttachment;
 
+	Slider oscOneCoarse;
+	std::unique_ptr<AudioProcessorValueTreeState::SliderAttachment> coarseAttachment;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OrenjiAudioProcessorEditor)
 };

@@ -10,6 +10,7 @@ Oscillator::Oscillator(std::string oscName)
 	m_amplitude = 0.125;
 	m_frequency = 440;
 	m_fine = 1.0;
+	m_coarse = 0.0;
 	m_phase = 0.0;
 	m_waveform = new Sine();
 
@@ -28,9 +29,9 @@ float Oscillator::sample(double time)
 	return m_waveform->sample((m_frequency * m_fine), time) * m_amplitude;
 }
 
-void Oscillator::tune(double frequency)
+void Oscillator::tune(int midiNote)
 {
-	m_frequency = frequency;
+	m_frequency = MidiMessage::getMidiNoteInHertz(midiNote + m_coarse);
 }
 
 void Oscillator::setWaveform(int waveform)
@@ -66,6 +67,12 @@ void Oscillator::parameterChanged(const String& parameterID, float newValue)
 	{
 		DBG("matched: " << m_boundParams["fine"]);
 		m_fine = newValue;
+	}
+
+	if (parameterID.toStdString() == m_boundParams["coarse"])
+	{
+		DBG("matched: " << m_boundParams["coarse"]);
+		m_coarse = newValue;
 	}
 }
 

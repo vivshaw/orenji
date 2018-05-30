@@ -4,8 +4,6 @@ DualOSCVoice::DualOSCVoice() : m_OSCOne("osc1"), m_OSCTwo("osc2")
 {
 	m_time = 0.0;
 	m_deltaTime = 0.0;
-
-	m_OSCInterval = 1.5;
 };
 
 bool DualOSCVoice::canPlaySound(SynthesiserSound* sound)
@@ -19,11 +17,10 @@ void DualOSCVoice::startNote(int midiNoteNumber, float velocity,
 	level = velocity * 0.15;
 	tailOff = 0.0;
 
-	m_frequency = MidiMessage::getMidiNoteInHertz(midiNoteNumber);
 	m_deltaTime = 1 / getSampleRate();
 
-	m_OSCOne.tune(m_frequency);
-	m_OSCTwo.tune(m_frequency * m_OSCInterval);
+	m_OSCOne.tune(midiNoteNumber);
+	m_OSCTwo.tune(midiNoteNumber);
 }
 
 void DualOSCVoice::stopNote(float /*velocity*/, bool allowTailOff)
@@ -44,16 +41,6 @@ void DualOSCVoice::parameterChanged(const String& parameterID, float newValue)
 {
 	DBG("Changed a parameter!");
 	DBG(parameterID);
-	
-	if (parameterID == "osc1wave")
-	{
-		m_OSCOne.setWaveform(newValue);
-	}
-
-	if (parameterID == "osc2wave")
-	{
-		m_OSCTwo.setWaveform(newValue);
-	}
 }
 
 void DualOSCVoice::renderNextBlock(AudioSampleBuffer& outputBuffer, int startSample, int numSamples)

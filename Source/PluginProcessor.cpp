@@ -35,11 +35,27 @@ OrenjiAudioProcessor::OrenjiAudioProcessor()
 		nullptr,
 		nullptr);
 
+	parameters.createAndAddParameter("osc1_coarse",
+		"OSC 1 Coarse",
+		String(),
+		NormalisableRange<float>(-12.0f, 12.0f),
+		0.0f,
+		nullptr,
+		nullptr);
+
 	parameters.createAndAddParameter("osc2_wave",
 		"OSC 2 Wave",
 		String(),
 		NormalisableRange<float>(0.0f, 3.0f, 1.0f),
 		0.0f,
+		nullptr,
+		nullptr);
+
+	parameters.createAndAddParameter("osc2_fine",
+		"OSC 1 Fine",
+		String(),
+		NormalisableRange<float>(0.9f, 1.1f),
+		1.0f,
 		nullptr,
 		nullptr);
 
@@ -77,14 +93,6 @@ void OrenjiAudioProcessor::autobind(AutoBindableListener* toBind)
 
 	toBind->receiveBoundParameters(boundParams);
 }
-
-void OrenjiAudioProcessor::parameterChanged(const String& parameterID, float newValue)
-{
-	DBG("Changed a parameter!");
-	DBG(parameterID);
-	DBG(newValue);
-}
-
 
 //==============================================================================
 const String OrenjiAudioProcessor::getName() const
