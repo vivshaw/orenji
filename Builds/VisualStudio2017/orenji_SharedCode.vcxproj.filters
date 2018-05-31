@@ -424,7 +424,7 @@
     <ClCompile Include="..\..\Source\OrenjiEngine\Waveform\Waveform.cpp">
       <Filter>orenji\Source\OrenjiEngine\Waveform</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\OrenjiEngine\DualOSCVoice.cpp">
+    <ClCompile Include="..\..\Source\OrenjiEngine\MultiOSCVoice.cpp">
       <Filter>orenji\Source\OrenjiEngine</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\OrenjiEngine\Oscillator.cpp">
@@ -2358,10 +2358,10 @@
     <ClInclude Include="..\..\Source\OrenjiEngine\Waveform\Waveform.h">
       <Filter>orenji\Source\OrenjiEngine\Waveform</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\OrenjiEngine\DualOSCSound.h">
+    <ClInclude Include="..\..\Source\OrenjiEngine\MultiOSCSound.h">
       <Filter>orenji\Source\OrenjiEngine</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\OrenjiEngine\DualOSCVoice.h">
+    <ClInclude Include="..\..\Source\OrenjiEngine\MultiOSCVoice.h">
       <Filter>orenji\Source\OrenjiEngine</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\OrenjiEngine\Oscillator.h">

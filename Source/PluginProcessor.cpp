@@ -1,8 +1,8 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
-#include "OrenjiEngine/DualOSCVoice.h"
-#include "OrenjiEngine/DualOSCSound.h"
+#include "OrenjiEngine/MultiOSCVoice.h"
+#include "OrenjiEngine/MultiOSCSound.h"
 
 OrenjiAudioProcessor::OrenjiAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
@@ -92,10 +92,10 @@ OrenjiAudioProcessor::OrenjiAudioProcessor()
 
 	parameters.state = ValueTree(Identifier("DefaultParams"));
 
-	synth.addVoice(new DualOSCVoice());
-	synth.addSound(new DualOSCSound());
+	synth.addVoice(new MultiOSCVoice());
+	synth.addSound(new MultiOSCSound());
 
-	DualOSCVoice* synthVoice = dynamic_cast<DualOSCVoice*> (synth.getVoice(0));
+	MultiOSCVoice* synthVoice = dynamic_cast<MultiOSCVoice*> (synth.getVoice(0));
 
 	parameters.autobind(&synthVoice->m_OSCOne);
 	parameters.autobind(&synthVoice->m_OSCTwo);

@@ -34,10 +34,10 @@
           <FILE id="eRwGih" name="Waveform.cpp" compile="1" resource="0" file="Source/OrenjiEngine/Waveform/Waveform.cpp"/>
           <FILE id="mbYbV0" name="Waveform.h" compile="0" resource="0" file="Source/OrenjiEngine/Waveform/Waveform.h"/>
         </GROUP>
-        <FILE id="WLn5SB" name="DualOSCSound.h" compile="0" resource="0" file="Source/OrenjiEngine/DualOSCSound.h"/>
-        <FILE id="VwhDCH" name="DualOSCVoice.cpp" compile="1" resource="0"
-              file="Source/OrenjiEngine/DualOSCVoice.cpp"/>
-        <FILE id="gmTkNr" name="DualOSCVoice.h" compile="0" resource="0" file="Source/OrenjiEngine/DualOSCVoice.h"/>
+        <FILE id="yf2Gnt" name="MultiOSCSound.h" compile="0" resource="0" file="Source/OrenjiEngine/MultiOSCSound.h"/>
+        <FILE id="lpH8XG" name="MultiOSCVoice.cpp" compile="1" resource="0"
+              file="Source/OrenjiEngine/MultiOSCVoice.cpp"/>
+        <FILE id="SjaASe" name="MultiOSCVoice.h" compile="0" resource="0" file="Source/OrenjiEngine/MultiOSCVoice.h"/>
         <FILE id="QQryuR" name="Oscillator.cpp" compile="1" resource="0" file="Source/OrenjiEngine/Oscillator.cpp"/>
         <FILE id="o4kIm0" name="Oscillator.h" compile="0" resource="0" file="Source/OrenjiEngine/Oscillator.h"/>
       </GROUP>

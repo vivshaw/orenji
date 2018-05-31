@@ -2,13 +2,13 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "../PluginProcessor.h"
-#include "DualOSCSound.h"
+#include "MultiOSCSound.h"
 #include "Oscillator.h"
 
-class DualOSCVoice : public SynthesiserVoice, public AudioProcessorValueTreeState::Listener
+class MultiOSCVoice : public SynthesiserVoice, public AudioProcessorValueTreeState::Listener
 {
 public:
-	DualOSCVoice();
+	MultiOSCVoice();
 
 	bool canPlaySound(SynthesiserSound* sound) override;
 

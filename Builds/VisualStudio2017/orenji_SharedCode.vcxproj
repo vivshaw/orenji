@@ -153,7 +153,7 @@
     <ClCompile Include="..\..\Source\OrenjiEngine\Waveform\Square.cpp"/>
     <ClCompile Include="..\..\Source\OrenjiEngine\Waveform\Triangle.cpp"/>
     <ClCompile Include="..\..\Source\OrenjiEngine\Waveform\Waveform.cpp"/>
-    <ClCompile Include="..\..\Source\OrenjiEngine\DualOSCVoice.cpp"/>
+    <ClCompile Include="..\..\Source\OrenjiEngine\MultiOSCVoice.cpp"/>
     <ClCompile Include="..\..\Source\OrenjiEngine\Oscillator.cpp"/>
     <ClCompile Include="..\..\Source\PluginProcessor.cpp"/>
     <ClCompile Include="..\..\Source\PluginEditor.cpp"/>
@@ -1903,8 +1903,8 @@
     <ClInclude Include="..\..\Source\OrenjiEngine\Waveform\Square.h"/>
     <ClInclude Include="..\..\Source\OrenjiEngine\Waveform\Triangle.h"/>
     <ClInclude Include="..\..\Source\OrenjiEngine\Waveform\Waveform.h"/>
-    <ClInclude Include="..\..\Source\OrenjiEngine\DualOSCSound.h"/>
-    <ClInclude Include="..\..\Source\OrenjiEngine\DualOSCVoice.h"/>
+    <ClInclude Include="..\..\Source\OrenjiEngine\MultiOSCSound.h"/>
+    <ClInclude Include="..\..\Source\OrenjiEngine\MultiOSCVoice.h"/>
     <ClInclude Include="..\..\Source\OrenjiEngine\Oscillator.h"/>
     <ClInclude Include="..\..\Source\PluginProcessor.h"/>
     <ClInclude Include="..\..\Source\PluginEditor.h"/>

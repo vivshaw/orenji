@@ -47,9 +47,9 @@ add_library( ${BINARY_NAME}
     "../../../Source/OrenjiEngine/Waveform/Triangle.h"
     "../../../Source/OrenjiEngine/Waveform/Waveform.cpp"
     "../../../Source/OrenjiEngine/Waveform/Waveform.h"
-    "../../../Source/OrenjiEngine/DualOSCSound.h"
-    "../../../Source/OrenjiEngine/DualOSCVoice.cpp"
-    "../../../Source/OrenjiEngine/DualOSCVoice.h"
+    "../../../Source/OrenjiEngine/MultiOSCSound.h"
+    "../../../Source/OrenjiEngine/MultiOSCVoice.cpp"
+    "../../../Source/OrenjiEngine/MultiOSCVoice.h"
     "../../../Source/OrenjiEngine/Oscillator.cpp"
     "../../../Source/OrenjiEngine/Oscillator.h"
     "../../../Source/PluginProcessor.cpp"
@@ -1397,8 +1397,8 @@ set_source_files_properties("../../../Source/OrenjiEngine/Waveform/Sine.h" PROPE
 set_source_files_properties("../../../Source/OrenjiEngine/Waveform/Square.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/OrenjiEngine/Waveform/Triangle.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/OrenjiEngine/Waveform/Waveform.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties("../../../Source/OrenjiEngine/DualOSCSound.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties("../../../Source/OrenjiEngine/DualOSCVoice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/OrenjiEngine/MultiOSCSound.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/OrenjiEngine/MultiOSCVoice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/OrenjiEngine/Oscillator.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/PluginProcessor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/PluginEditor.h" PROPERTIES HEADER_FILE_ONLY TRUE)

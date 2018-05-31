@@ -34,7 +34,7 @@
 		F16DC3511D30863B8F3C670F = {isa = PBXBuildFile; fileRef = 453A286979DC9E81134E29C1; };
 		BEAAEF3BAF88D74B14174AEA = {isa = PBXBuildFile; fileRef = DFBEDED621D9D75026A8C941; };
 		D6A3F6F1C3166749415942F7 = {isa = PBXBuildFile; fileRef = CED4F7702FD1A1FB33530021; };
-		10826597D904CDA98F049A59 = {isa = PBXBuildFile; fileRef = 1654C8C9037C4E4E7228F95B; };
+		0994A9DFE6B3BADB86CEFEFF = {isa = PBXBuildFile; fileRef = BA7D807ECE1FC2EAB0945694; };
 		8D950BC986DDC9265BB0E826 = {isa = PBXBuildFile; fileRef = A6F2ECBDD0358FDF14F1612E; };
 		D730CE95374FDDF2609F7497 = {isa = PBXBuildFile; fileRef = 5EA5975E46838A46062AA95D; };
 		9EDE7AA4C9E3BF4F65B7F13F = {isa = PBXBuildFile; fileRef = 69DDF1F4740CF8566E8CCAA1; };
@@ -68,7 +68,7 @@
 		0B5EC7A1C0AD38F8C8B20E5E = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = "SOURCE_ROOT"; };
 		0C348F61AD5BBC9754476F47 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = orenji.entitlements; path = orenji.entitlements; sourceTree = "SOURCE_ROOT"; };
 		1080486F56CAA1289C9195AE = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_utils.mm"; path = "../../JuceLibraryCode/include_juce_audio_utils.mm"; sourceTree = "SOURCE_ROOT"; };
-		1654C8C9037C4E4E7228F95B = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DualOSCVoice.cpp; path = ../../Source/OrenjiEngine/DualOSCVoice.cpp; sourceTree = "SOURCE_ROOT"; };
+		1350A33213457E46E2AB7E0F = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MultiOSCVoice.h; path = ../../Source/OrenjiEngine/MultiOSCVoice.h; sourceTree = "SOURCE_ROOT"; };
 		1B4C9819977E0F1E52093647 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Standalone_Plugin.plist"; path = "Info-Standalone_Plugin.plist"; sourceTree = "SOURCE_ROOT"; };
 		1C27FBB122429FEF211EC5CA = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_plugin_client_AU_2.mm"; path = "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm"; sourceTree = "SOURCE_ROOT"; };
 		1F4CC23903AABE253BA8B6EB = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_formats"; path = "~/JUCE/modules/juce_audio_formats"; sourceTree = "<absolute>"; };
@@ -102,12 +102,11 @@
 		69DDF1F4740CF8566E8CCAA1 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginEditor.cpp; path = ../../Source/PluginEditor.cpp; sourceTree = "SOURCE_ROOT"; };
 		6A8815578D3C90CC249606A7 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6B74574A034A1C0109A18F5B = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_core.mm"; path = "../../JuceLibraryCode/include_juce_core.mm"; sourceTree = "SOURCE_ROOT"; };
-		7239862D68617FBADB8544C4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DualOSCSound.h; path = ../../Source/OrenjiEngine/DualOSCSound.h; sourceTree = "SOURCE_ROOT"; };
 		7A62695AE5E6E4909EB9948C = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		7D608314C7688E8388B9BEF8 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_utils"; path = "~/JUCE/modules/juce_audio_utils"; sourceTree = "<absolute>"; };
-		860C6E0FD0ED966A89AA0739 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DualOSCVoice.h; path = ../../Source/OrenjiEngine/DualOSCVoice.h; sourceTree = "SOURCE_ROOT"; };
 		8B6228D44C696C6C3E0A6F67 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_video.mm"; path = "../../JuceLibraryCode/include_juce_video.mm"; sourceTree = "SOURCE_ROOT"; };
 		90023C00BBA46135CDBA021C = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_devices"; path = "~/JUCE/modules/juce_audio_devices"; sourceTree = "<absolute>"; };
+		9305BB753E9C7DC54AC27AFC = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MultiOSCSound.h; path = ../../Source/OrenjiEngine/MultiOSCSound.h; sourceTree = "SOURCE_ROOT"; };
 		937AE6F677DA0375E6DB16E8 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		982D6C27E77116DBA2325CC4 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		9C247F6B466044A331254A81 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_opengl.mm"; path = "../../JuceLibraryCode/include_juce_opengl.mm"; sourceTree = "SOURCE_ROOT"; };
@@ -121,6 +120,7 @@
 		ABAFF20AD09133302CD64902 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 		B264F7769744A43AD37F7C65 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B527C889EF164AE2E8B00126 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_plugin_client"; path = "~/JUCE/modules/juce_audio_plugin_client"; sourceTree = "<absolute>"; };
+		BA7D807ECE1FC2EAB0945694 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MultiOSCVoice.cpp; path = ../../Source/OrenjiEngine/MultiOSCVoice.cpp; sourceTree = "SOURCE_ROOT"; };
 		BAAFE5A204321D3B15A742BF = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_gui_extra.mm"; path = "../../JuceLibraryCode/include_juce_gui_extra.mm"; sourceTree = "SOURCE_ROOT"; };
 		BCD681CB253340DF0949EFB9 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginEditor.h; path = ../../Source/PluginEditor.h; sourceTree = "SOURCE_ROOT"; };
 		C2CA3BA69F892C015FD802FA = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_cryptography"; path = "~/JUCE/modules/juce_cryptography"; sourceTree = "<absolute>"; };
@@ -170,9 +170,9 @@
 					D71B56197475CA5BF5F19DFC, ); name = Waveform; sourceTree = "<group>"; };
 		32981272AB9001C17F51E3B4 = {isa = PBXGroup; children = (
 					D3CC42BB92E36E9915F03BF5,
-					7239862D68617FBADB8544C4,
-					1654C8C9037C4E4E7228F95B,
-					860C6E0FD0ED966A89AA0739,
+					9305BB753E9C7DC54AC27AFC,
+					BA7D807ECE1FC2EAB0945694,
+					1350A33213457E46E2AB7E0F,
 					A6F2ECBDD0358FDF14F1612E,
 					3B99D1E286B6FAA581153405, ); name = OrenjiEngine; sourceTree = "<group>"; };
 		6BB85075A72CBF1ADFA43263 = {isa = PBXGroup; children = (
@@ -739,7 +739,7 @@
 					F16DC3511D30863B8F3C670F,
 					BEAAEF3BAF88D74B14174AEA,
 					D6A3F6F1C3166749415942F7,
-					10826597D904CDA98F049A59,
+					0994A9DFE6B3BADB86CEFEFF,
 					8D950BC986DDC9265BB0E826,
 					D730CE95374FDDF2609F7497,
 					9EDE7AA4C9E3BF4F65B7F13F,

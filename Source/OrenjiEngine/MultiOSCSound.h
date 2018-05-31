@@ -2,10 +2,10 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
-class DualOSCSound : public SynthesiserSound
+class MultiOSCSound : public SynthesiserSound
 {
 public:
-	DualOSCSound() {}
+	MultiOSCSound() {}
 	bool appliesToNote(int) override { return true; }
 	bool appliesToChannel(int) override { return true; }
 };

@@ -1,17 +1,17 @@
-#include "DualOSCVoice.h"
+#include "MultiOSCVoice.h"
 
-DualOSCVoice::DualOSCVoice() : m_OSCOne("osc1"), m_OSCTwo("osc2"), m_OSCThree("osc3")
+MultiOSCVoice::MultiOSCVoice() : m_OSCOne("osc1"), m_OSCTwo("osc2"), m_OSCThree("osc3")
 {
 	m_time = 0.0;
 	m_deltaTime = 0.0;
 };
 
-bool DualOSCVoice::canPlaySound(SynthesiserSound* sound)
+bool MultiOSCVoice::canPlaySound(SynthesiserSound* sound)
 {
-	return dynamic_cast<DualOSCSound*> (sound) != nullptr;
+	return dynamic_cast<MultiOSCSound*> (sound) != nullptr;
 }
 
-void DualOSCVoice::startNote(int midiNoteNumber, float velocity,
+void MultiOSCVoice::startNote(int midiNoteNumber, float velocity,
 	SynthesiserSound*, int /*currentPitchWheelPosition*/)
 {
 	level = velocity * 0.15;
@@ -24,7 +24,7 @@ void DualOSCVoice::startNote(int midiNoteNumber, float velocity,
 	m_OSCThree.tune(midiNoteNumber);
 }
 
-void DualOSCVoice::stopNote(float /*velocity*/, bool allowTailOff)
+void MultiOSCVoice::stopNote(float /*velocity*/, bool allowTailOff)
 {
 	if (allowTailOff)
 	{
@@ -38,13 +38,13 @@ void DualOSCVoice::stopNote(float /*velocity*/, bool allowTailOff)
 	}
 }
 
-void DualOSCVoice::parameterChanged(const String& parameterID, float newValue)
+void MultiOSCVoice::parameterChanged(const String& parameterID, float newValue)
 {
 	DBG("Changed a parameter!");
 	DBG(parameterID);
 }
 
-void DualOSCVoice::renderNextBlock(AudioSampleBuffer& outputBuffer, int startSample, int numSamples)
+void MultiOSCVoice::renderNextBlock(AudioSampleBuffer& outputBuffer, int startSample, int numSamples)
 {
 	if (m_time >= std::numeric_limits<double>::max())
 	{
