@@ -22,7 +22,7 @@ public:
 
 	void renderNextBlock(AudioSampleBuffer& outputBuffer, int startSample, int numSamples) override;
 
-	Oscillator m_OSCOne, m_OSCTwo;
+	Oscillator m_OSCOne, m_OSCTwo, m_OSCThree;
 
 private:
 	void parameterChanged(const String& parameterID, float newValue) override;
