@@ -56,7 +56,7 @@ void MultiOSCVoice::renderNextBlock(AudioSampleBuffer& outputBuffer, int startSa
 		{
 			while (--numSamples >= 0)
 			{
-				auto currentSample = (float)((m_OSCOne.sample(m_time) + m_OSCTwo.sample(m_time) + m_OSCThree.sample(m_time)) * tailOff);
+				auto currentSample = (float)((m_OSCOne.sample(m_time) + m_OSCTwo.sample(m_time) + m_OSCThree.sample(m_time)) / 3.0 * tailOff);
 
 				for (auto i = outputBuffer.getNumChannels(); --i >= 0;)
 					outputBuffer.addSample(i, startSample, currentSample);
@@ -78,7 +78,7 @@ void MultiOSCVoice::renderNextBlock(AudioSampleBuffer& outputBuffer, int startSa
 		{
 			while (--numSamples >= 0) // [6]
 			{
-				auto currentSample = (float)(m_OSCOne.sample(m_time) + m_OSCTwo.sample(m_time) + m_OSCThree.sample(m_time));
+				auto currentSample = (float)(m_OSCOne.sample(m_time) + m_OSCTwo.sample(m_time) + m_OSCThree.sample(m_time)) / 3.0;
 
 				for (auto i = outputBuffer.getNumChannels(); --i >= 0;)
 					outputBuffer.addSample(i, startSample, currentSample);
