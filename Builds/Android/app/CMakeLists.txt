@@ -30,7 +30,10 @@ add_library( ${BINARY_NAME}
 
     SHARED
 
-    "../../../Source/Util/autoBindable.h"
+    "../../../Source/JuceExt/AutoBindableListener.h"
+    "../../../Source/JuceExt/AutoBindingAPVST.cpp"
+    "../../../Source/JuceExt/AutoBindingAPVST.h"
+    "../../../Source/JuceExt/JuceExt.h"
     "../../../Source/OrenjiEngine/Waveform/Saw.cpp"
     "../../../Source/OrenjiEngine/Waveform/Saw.h"
     "../../../Source/OrenjiEngine/Waveform/Sine.cpp"
@@ -1381,7 +1384,9 @@ add_library( ${BINARY_NAME}
     "../../../JuceLibraryCode/JuceHeader.h"
 )
 
-set_source_files_properties("../../../Source/Util/autoBindable.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/JuceExt/AutoBindableListener.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/JuceExt/AutoBindingAPVST.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/JuceExt/JuceExt.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/OrenjiEngine/Waveform/Saw.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/OrenjiEngine/Waveform/Sine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/OrenjiEngine/Waveform/Square.h" PROPERTIES HEADER_FILE_ONLY TRUE)

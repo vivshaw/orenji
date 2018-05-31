@@ -4,8 +4,14 @@
               pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn">
   <MAINGROUP id="EZqYUo" name="orenji">
     <GROUP id="{FA9D7E6D-4FEA-626A-0687-180EAB3E5D36}" name="Source">
-      <GROUP id="{6E8F9457-858D-FE70-8E91-FB562062C6A2}" name="Util">
-        <FILE id="k2x1dx" name="autoBindable.h" compile="0" resource="0" file="Source/Util/autoBindable.h"/>
+      <GROUP id="{59AF38F1-7ED7-4F4D-919F-94FD81616388}" name="JuceExt">
+        <FILE id="MeYOeE" name="AutoBindableListener.h" compile="0" resource="0"
+              file="Source/JuceExt/AutoBindableListener.h"/>
+        <FILE id="m1trcE" name="AutoBindingAPVST.cpp" compile="1" resource="0"
+              file="Source/JuceExt/AutoBindingAPVST.cpp"/>
+        <FILE id="RShldD" name="AutoBindingAPVST.h" compile="0" resource="0"
+              file="Source/JuceExt/AutoBindingAPVST.h"/>
+        <FILE id="BPMFfM" name="JuceExt.h" compile="0" resource="0" file="Source/JuceExt/JuceExt.h"/>
       </GROUP>
       <GROUP id="{3969003E-E67A-6BCA-3F32-F04890BA5B5D}" name="OrenjiEngine">
         <GROUP id="{726526E1-1543-39D3-5A82-849804247194}" name="Waveform">

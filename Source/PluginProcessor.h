@@ -2,11 +2,8 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
-#include "Util\autoBindable.h"
+#include "JuceExt/JuceExt.h"
 
-//==============================================================================
-/**
-*/
 class OrenjiAudioProcessor  : public AudioProcessor
 {
 public:
@@ -47,9 +44,7 @@ public:
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
-	void autobind(AutoBindableListener* toBind);
-
-	AudioProcessorValueTreeState parameters;
+	JuceExt::AutoBindingAPVST parameters;
 
 private:
     //==============================================================================

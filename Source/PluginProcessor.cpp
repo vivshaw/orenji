@@ -4,7 +4,6 @@
 #include "OrenjiEngine/DualOSCVoice.h"
 #include "OrenjiEngine/DualOSCSound.h"
 
-//==============================================================================
 OrenjiAudioProcessor::OrenjiAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
@@ -66,35 +65,35 @@ OrenjiAudioProcessor::OrenjiAudioProcessor()
 
 	DualOSCVoice* synthVoice = dynamic_cast<DualOSCVoice*> (synth.getVoice(0));
 
-	autobind(&synthVoice->m_OSCOne);
-	autobind(&synthVoice->m_OSCTwo);
+	parameters.autobind(&synthVoice->m_OSCOne);
+	parameters.autobind(&synthVoice->m_OSCTwo);
 }
 
+void OrenjiAudioProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
+{
+	synth.setCurrentPlaybackSampleRate(sampleRate);
+}
+
+void OrenjiAudioProcessor::processBlock(AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+{
+	ScopedNoDenormals noDenormals;
+	auto totalNumInputChannels = getTotalNumInputChannels();
+	auto totalNumOutputChannels = getTotalNumOutputChannels();
+
+	for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
+		buffer.clear(i, 0, buffer.getNumSamples());
+
+	synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+}
+
+
+
+// JUCE Boilerplate
+//==============================================================================
 OrenjiAudioProcessor::~OrenjiAudioProcessor()
 {
 }
 
-void OrenjiAudioProcessor::autobind(AutoBindableListener* toBind)
-{
-	DBG("autobinding " << toBind->name);
-
-	std::map<std::string, std::string> boundParams;
-
-	for (const std::string& paramToBind : toBind->bindableParameters)
-	{
-		DBG("binding " << paramToBind << " to " << toBind->name);
-		
-		std::string boundParam = toBind->name + "_" + paramToBind;
-		boundParams.insert({paramToBind, boundParam});
-		DBG("bound! " << boundParam);
-
-		parameters.addParameterListener(boundParam, toBind);
-	}
-
-	toBind->receiveBoundParameters(boundParams);
-}
-
-//==============================================================================
 const String OrenjiAudioProcessor::getName() const
 {
     return JucePlugin_Name;
@@ -156,12 +155,6 @@ void OrenjiAudioProcessor::changeProgramName (int index, const String& newName)
 {
 }
 
-//==============================================================================
-void OrenjiAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
-{
-	synth.setCurrentPlaybackSampleRate(sampleRate);
-}
-
 void OrenjiAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
@@ -191,24 +184,6 @@ bool OrenjiAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) c
   #endif
 }
 #endif
-
-void OrenjiAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
-{
-    ScopedNoDenormals noDenormals;
-    auto totalNumInputChannels  = getTotalNumInputChannels();
-    auto totalNumOutputChannels = getTotalNumOutputChannels();
-
-    // In case we have more outputs than inputs, this code clears any output
-    // channels that didn't contain input data, (because these aren't
-    // guaranteed to be empty - they may contain garbage).
-    // This is here to avoid people getting screaming feedback
-    // when they first compile a plugin, but obviously you don't need to keep
-    // this code if your algorithm always overwrites all the output channels.
-    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
-        buffer.clear (i, 0, buffer.getNumSamples());
-
-	synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
-}
 
 //==============================================================================
 bool OrenjiAudioProcessor::hasEditor() const

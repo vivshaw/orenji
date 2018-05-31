@@ -5,6 +5,10 @@
 #include "Waveform/Square.h"
 #include "Waveform/Triangle.h"
 
+const std::string Oscillator::WAVE = "wave";
+const std::string Oscillator::FINE = "fine";
+const std::string Oscillator::COARSE = "coarse";
+
 Oscillator::Oscillator(std::string oscName)
 {
 	m_amplitude = 0.125;
@@ -17,11 +21,9 @@ Oscillator::Oscillator(std::string oscName)
 
 	//------ Autobind parameters --------//
 	//what is our OSC called?
-	name = oscName;
+	scope = oscName;
 	//what parameters do Oscillators care about?
-	bindableParameters.push_back("wave");
-	bindableParameters.push_back("fine");
-	bindableParameters.push_back("coarse");
+	scoped_parameters = { WAVE, FINE, COARSE };
 }
 
 float Oscillator::sample(double time)
@@ -55,28 +57,23 @@ void Oscillator::setWaveform(int waveform)
 
 void Oscillator::parameterChanged(const String& parameterID, float newValue)
 {
-	DBG(name << " received a param change: " << parameterID);
+	DBG(scope << " received a param change: " << parameterID);
 
-	if (parameterID.toStdString() == m_boundParams["wave"])
+	if (parameterID.toStdString() == parameters[WAVE])
 	{
-		DBG("matched: " << m_boundParams["wave"]);
+		DBG("matched: " << parameters[WAVE]);
 		this->setWaveform(newValue);
 	}
 
-	if (parameterID.toStdString() == m_boundParams["fine"])
+	if (parameterID.toStdString() == parameters[FINE])
 	{
-		DBG("matched: " << m_boundParams["fine"]);
+		DBG("matched: " << parameters[FINE]);
 		m_fine = newValue;
 	}
 
-	if (parameterID.toStdString() == m_boundParams["coarse"])
+	if (parameterID.toStdString() == parameters[COARSE])
 	{
-		DBG("matched: " << m_boundParams["coarse"]);
+		DBG("matched: " << parameters[COARSE]);
 		m_coarse = newValue;
 	}
-}
-
-void Oscillator::receiveBoundParameters(std::map<std::string, std::string> boundParams)
-{
-	m_boundParams = boundParams;
 }

@@ -7,9 +7,9 @@
 
 #include "Waveform/Waveform.h"
 
-#include "../Util/autoBindable.h"
+#include "../JuceExt/JuceExt.h"
 
-class Oscillator : public AutoBindableListener
+class Oscillator : public JuceExt::AutoBindableListener
 {
 public:
 	Oscillator(std::string oscName);
@@ -22,14 +22,14 @@ public:
 	// generate one sample
 	float sample(double time);
 
-	void receiveBoundParameters(std::map<std::string, std::string> boundParams) override;
+	static const std::string WAVE;
+	static const std::string FINE;
+	static const std::string COARSE;
 
 private:
 	void parameterChanged(const String& parameterID, float newValue) override;
 
 	double m_amplitude, m_frequency, m_phase, m_fine, m_coarse;
-
-	std::map<std::string, std::string> m_boundParams;
 	
-	Waveform *m_waveform;
+	Waveform* m_waveform;
 };

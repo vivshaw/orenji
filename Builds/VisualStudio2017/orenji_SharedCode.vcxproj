@@ -146,6 +146,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\JuceExt\AutoBindingAPVST.cpp"/>
     <ClCompile Include="..\..\Source\OrenjiEngine\Waveform\Saw.cpp"/>
     <ClCompile Include="..\..\Source\OrenjiEngine\Waveform\Sine.cpp"/>
     <ClCompile Include="..\..\Source\OrenjiEngine\Waveform\Square.cpp"/>
@@ -1891,7 +1892,9 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_video.cpp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\Util\autoBindable.h"/>
+    <ClInclude Include="..\..\Source\JuceExt\AutoBindableListener.h"/>
+    <ClInclude Include="..\..\Source\JuceExt\AutoBindingAPVST.h"/>
+    <ClInclude Include="..\..\Source\JuceExt\JuceExt.h"/>
     <ClInclude Include="..\..\Source\OrenjiEngine\Waveform\Saw.h"/>
     <ClInclude Include="..\..\Source\OrenjiEngine\Waveform\Sine.h"/>
     <ClInclude Include="..\..\Source\OrenjiEngine\Waveform\Square.h"/>

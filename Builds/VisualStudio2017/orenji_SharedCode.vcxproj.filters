@@ -2,8 +2,8 @@
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="orenji\Source\Util">
-      <UniqueIdentifier>{820E74F7-EBA1-FA92-02F1-73682564200A}</UniqueIdentifier>
+    <Filter Include="orenji\Source\JuceExt">
+      <UniqueIdentifier>{C0A7AC91-3136-E400-1DCD-C69F7744F9E4}</UniqueIdentifier>
     </Filter>
     <Filter Include="orenji\Source\OrenjiEngine\Waveform">
       <UniqueIdentifier>{9C2D7923-E240-8555-0BAB-C7EF44FC5C85}</UniqueIdentifier>
@@ -400,6 +400,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\JuceExt\AutoBindingAPVST.cpp">
+      <Filter>orenji\Source\JuceExt</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\OrenjiEngine\Waveform\Saw.cpp">
       <Filter>orenji\Source\OrenjiEngine\Waveform</Filter>
     </ClCompile>
@@ -2319,8 +2322,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\Util\autoBindable.h">
-      <Filter>orenji\Source\Util</Filter>
+    <ClInclude Include="..\..\Source\JuceExt\AutoBindableListener.h">
+      <Filter>orenji\Source\JuceExt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\JuceExt\AutoBindingAPVST.h">
+      <Filter>orenji\Source\JuceExt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\JuceExt\JuceExt.h">
+      <Filter>orenji\Source\JuceExt</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\OrenjiEngine\Waveform\Saw.h">
       <Filter>orenji\Source\OrenjiEngine\Waveform</Filter>
