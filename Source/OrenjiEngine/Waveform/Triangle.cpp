@@ -4,21 +4,18 @@
 
 float Triangle::sample(double time, double frequency)
 {
-	double res = 0.0;
-	double fullPeriodTime = 1.0 / frequency;
-	double localTime = fmod(time, fullPeriodTime);
+	double full_period = 1.0 / frequency;
+	double localTime = fmod(time, full_period);
 
-	double value = localTime / fullPeriodTime;
+	double pos_in_period = localTime / full_period;
 
-	if (value < 0.25) {
-		res = value * 4;
+	if (pos_in_period < 0.25) {
+		return pos_in_period * 4;
 	}
-	else if (value < 0.75) {
-		res = 2.0 - (value * 4.0);
+	else if (pos_in_period < 0.75) {
+		return 2.0 - (pos_in_period * 4.0);
 	}
 	else {
-		res = value * 4 - 4.0;
+		return pos_in_period * 4 - 4.0;
 	}
-
-	return res;
 }

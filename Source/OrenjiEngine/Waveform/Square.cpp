@@ -4,9 +4,8 @@
 
 float Square::sample(double time, double frequency)
 {
-	double fullPeriodTime = 1.0 / frequency;
-	double halfPeriodTime = fullPeriodTime / 2.0;
-	double localTime = fmod(time, fullPeriodTime);
+	double full_period = 1.0 / frequency;
+	double local_time = fmod(time, full_period);
 
-	return (localTime < halfPeriodTime) ? 1.0 : -1.0;
+	return (local_time < full_period / 2) ? 1.0 : -1.0;
 }
