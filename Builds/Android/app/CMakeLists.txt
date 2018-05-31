@@ -30,6 +30,9 @@ add_library( ${BINARY_NAME}
 
     SHARED
 
+    "../../../Source/Views/OscillatorView.cpp"
+    "../../../Source/Views/OscillatorView.h"
+    "../../../Source/JuceExt/AutoBindableComponent.h"
     "../../../Source/JuceExt/AutoBindableListener.h"
     "../../../Source/JuceExt/AutoBindingAPVST.cpp"
     "../../../Source/JuceExt/AutoBindingAPVST.h"
@@ -1384,6 +1387,8 @@ add_library( ${BINARY_NAME}
     "../../../JuceLibraryCode/JuceHeader.h"
 )
 
+set_source_files_properties("../../../Source/Views/OscillatorView.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/JuceExt/AutoBindableComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/JuceExt/AutoBindableListener.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/JuceExt/AutoBindingAPVST.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/JuceExt/JuceExt.h" PROPERTIES HEADER_FILE_ONLY TRUE)

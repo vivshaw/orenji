@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="orenji\Source\Views">
+      <UniqueIdentifier>{968069AC-E913-7716-09D6-970F9DD88FDF}</UniqueIdentifier>
+    </Filter>
     <Filter Include="orenji\Source\JuceExt">
       <UniqueIdentifier>{C0A7AC91-3136-E400-1DCD-C69F7744F9E4}</UniqueIdentifier>
     </Filter>
@@ -400,6 +403,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\Views\OscillatorView.cpp">
+      <Filter>orenji\Source\Views</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\JuceExt\AutoBindingAPVST.cpp">
       <Filter>orenji\Source\JuceExt</Filter>
     </ClCompile>
@@ -2322,6 +2328,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Views\OscillatorView.h">
+      <Filter>orenji\Source\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\JuceExt\AutoBindableComponent.h">
+      <Filter>orenji\Source\JuceExt</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\JuceExt\AutoBindableListener.h">
       <Filter>orenji\Source\JuceExt</Filter>
     </ClInclude>

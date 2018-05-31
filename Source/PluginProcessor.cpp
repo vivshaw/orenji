@@ -51,10 +51,42 @@ OrenjiAudioProcessor::OrenjiAudioProcessor()
 		nullptr);
 
 	parameters.createAndAddParameter("osc2_fine",
-		"OSC 1 Fine",
+		"OSC 2 Fine",
 		String(),
 		NormalisableRange<float>(0.9f, 1.1f),
 		1.0f,
+		nullptr,
+		nullptr);
+
+	parameters.createAndAddParameter("osc2_coarse",
+		"OSC 2 Coarse",
+		String(),
+		NormalisableRange<float>(-12.0f, 12.0f),
+		0.0f,
+		nullptr,
+		nullptr);
+
+	parameters.createAndAddParameter("osc3_wave",
+		"OSC 3 Wave",
+		String(),
+		NormalisableRange<float>(0.0f, 3.0f, 1.0f),
+		0.0f,
+		nullptr,
+		nullptr);
+
+	parameters.createAndAddParameter("osc3_fine",
+		"OSC 3 Fine",
+		String(),
+		NormalisableRange<float>(0.9f, 1.1f),
+		1.0f,
+		nullptr,
+		nullptr);
+
+	parameters.createAndAddParameter("osc3_coarse",
+		"OSC 3 Coarse",
+		String(),
+		NormalisableRange<float>(-12.0f, 12.0f),
+		0.0f,
 		nullptr,
 		nullptr);
 
@@ -67,6 +99,7 @@ OrenjiAudioProcessor::OrenjiAudioProcessor()
 
 	parameters.autobind(&synthVoice->m_OSCOne);
 	parameters.autobind(&synthVoice->m_OSCTwo);
+	parameters.autobind(&synthVoice->m_OSCThree);
 }
 
 void OrenjiAudioProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)

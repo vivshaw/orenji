@@ -12,6 +12,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "PluginProcessor.h"
+#include "Views/OscillatorView.h"
 
 //==============================================================================
 /**
@@ -31,17 +32,7 @@ private:
     // access the processor object that created it.
     OrenjiAudioProcessor& processor;
 
-	ComboBox oscOneMenu;
-	ScopedPointer<AudioProcessorValueTreeState::ComboBoxAttachment> oscOneVal;
-
-	ComboBox oscTwoMenu;
-	ScopedPointer<AudioProcessorValueTreeState::ComboBoxAttachment> oscTwoVal;
-
-	Slider oscOneFine;
-	std::unique_ptr<AudioProcessorValueTreeState::SliderAttachment> fineAttachment;
-
-	Slider oscOneCoarse;
-	std::unique_ptr<AudioProcessorValueTreeState::SliderAttachment> coarseAttachment;
+	OscillatorView osc_1_view, osc_2_view, osc_3_view;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OrenjiAudioProcessorEditor)
 };

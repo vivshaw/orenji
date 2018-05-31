@@ -1,45 +1,17 @@
-/*
-  ==============================================================================
-
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin editor.
-
-  ==============================================================================
-*/
-
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
+#include "Views/OscillatorView.h"
+
 //==============================================================================
 OrenjiAudioProcessorEditor::OrenjiAudioProcessorEditor (OrenjiAudioProcessor& p)
-    : AudioProcessorEditor (&p), processor (p)
+    : AudioProcessorEditor (&p), processor (p), osc_1_view(p, "osc1"), osc_2_view(p, "osc2"), osc_3_view(p, "osc3")
 {
-    // Make sure that before the constructor has finished, you've set the
-    // editor's size to whatever you need it to be.
-    setSize (600, 300);
+    setSize (900, 800);
 
-	oscOneMenu.addItem("Sine", 1);
-	oscOneMenu.addItem("Saw", 2);
-	oscOneMenu.addItem("Square", 3);
-	oscOneMenu.addItem("Tri", 4);
-	oscOneMenu.setJustificationType(Justification::centred);
-	addAndMakeVisible(&oscOneMenu);
-	oscOneVal = new AudioProcessorValueTreeState::ComboBoxAttachment(processor.parameters, "osc1_wave", oscOneMenu);
-
-	oscTwoMenu.addItem("Sine", 1);
-	oscTwoMenu.addItem("Saw", 2);
-	oscTwoMenu.addItem("Square", 3);
-	oscTwoMenu.addItem("Tri", 4);
-	oscTwoMenu.setJustificationType(Justification::centred);
-	addAndMakeVisible(&oscTwoMenu);
-	oscTwoVal = new AudioProcessorValueTreeState::ComboBoxAttachment(processor.parameters, "osc2_wave", oscTwoMenu);
-
-	addAndMakeVisible(oscOneFine);
-	fineAttachment.reset(new AudioProcessorValueTreeState::SliderAttachment(processor.parameters, "osc1_fine", oscOneFine));
-
-	addAndMakeVisible(oscOneCoarse);
-	coarseAttachment.reset(new AudioProcessorValueTreeState::SliderAttachment(processor.parameters, "osc1_coarse", oscOneCoarse));
+	addAndMakeVisible(&osc_1_view);
+	addAndMakeVisible(&osc_2_view);
+	addAndMakeVisible(&osc_3_view);
 }
 
 OrenjiAudioProcessorEditor::~OrenjiAudioProcessorEditor()
@@ -55,8 +27,9 @@ void OrenjiAudioProcessorEditor::paint (Graphics& g)
 
 void OrenjiAudioProcessorEditor::resized()
 {
-	oscOneMenu.setBounds(10, 10, getWidth() / 2 - 10, 40);
-	oscTwoMenu.setBounds(getWidth() / 2, 10, getWidth() / 2 - 10, 40);
-	oscOneFine.setBounds(100, 100, getWidth() / 2 - 10, 40);
-	oscOneCoarse.setBounds(100, 200, getWidth() / 2 - 10, 40);
+	auto area = getLocalBounds();
+
+	osc_1_view.setBounds(area.removeFromLeft(300).removeFromTop(300));
+	osc_2_view.setBounds(area.removeFromLeft(300).removeFromTop(300));
+	osc_3_view.setBounds(area.removeFromLeft(300).removeFromTop(300));
 }
