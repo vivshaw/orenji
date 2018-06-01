@@ -12,6 +12,12 @@ OrenjiAudioProcessorEditor::OrenjiAudioProcessorEditor (OrenjiAudioProcessor& p)
 	addAndMakeVisible(&osc_1_view);
 	addAndMakeVisible(&osc_2_view);
 	addAndMakeVisible(&osc_3_view);
+
+	addAndMakeVisible(filtFreq);
+	freqAttachment.reset(new AudioProcessorValueTreeState::SliderAttachment(processor.parameters, "filt_freq", filtFreq));
+
+	addAndMakeVisible(filtQ);
+	qAttachment.reset(new AudioProcessorValueTreeState::SliderAttachment(processor.parameters, "filt_q", filtQ));
 }
 
 OrenjiAudioProcessorEditor::~OrenjiAudioProcessorEditor()
@@ -32,4 +38,7 @@ void OrenjiAudioProcessorEditor::resized()
 	osc_1_view.setBounds(area.removeFromLeft(300).removeFromTop(300));
 	osc_2_view.setBounds(area.removeFromLeft(300).removeFromTop(300));
 	osc_3_view.setBounds(area.removeFromLeft(300).removeFromTop(300));
+
+	filtFreq.setBounds(10, 500, getWidth() / 2, 40);
+	filtQ.setBounds(10, 560, getWidth() / 2, 40);
 }

@@ -90,6 +90,22 @@ OrenjiAudioProcessor::OrenjiAudioProcessor()
 		nullptr,
 		nullptr);
 
+	parameters.createAndAddParameter("filt_freq",
+		"Filter Frequency",
+		String(),
+		NormalisableRange<float>(20.0, 20000.0),
+		20000.0,
+		nullptr,
+		nullptr);
+
+	parameters.createAndAddParameter("filt_q",
+		"Filter Q",
+		String(),
+		NormalisableRange<float>(1.0, 30.0),
+		1.0,
+		nullptr,
+		nullptr);
+
 	parameters.state = ValueTree(Identifier("DefaultParams"));
 
 	synth.addVoice(new MultiOSCVoice());
@@ -105,18 +121,36 @@ OrenjiAudioProcessor::OrenjiAudioProcessor()
 void OrenjiAudioProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
 {
 	synth.setCurrentPlaybackSampleRate(sampleRate);
+
+	samples = sampleRate;
 }
 
 void OrenjiAudioProcessor::processBlock(AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
 {
+	//set some useful vars
 	ScopedNoDenormals noDenormals;
 	auto totalNumInputChannels = getTotalNumInputChannels();
 	auto totalNumOutputChannels = getTotalNumOutputChannels();
 
+	// clear unused channels
 	for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
 		buffer.clear(i, 0, buffer.getNumSamples());
-
+		
+	//render synth output
 	synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+
+	//apply filter
+	auto* l_channel = buffer.getWritePointer(0);
+	auto* r_channel = buffer.getWritePointer(1);
+	
+	auto filter_q = *parameters.getRawParameterValue("filt_q");
+	auto filter_freq = *parameters.getRawParameterValue("filt_freq");
+
+	filter_l.setCoefficients(IIRCoefficients::makeLowPass(samples, filter_freq, filter_q));
+	filter_r.setCoefficients(IIRCoefficients::makeLowPass(samples, filter_freq, filter_q));
+
+	filter_l.processSamples(l_channel, buffer.getNumSamples());
+	filter_r.processSamples(r_channel, buffer.getNumSamples());
 }
 
 

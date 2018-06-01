@@ -34,5 +34,11 @@ private:
 
 	OscillatorView osc_1_view, osc_2_view, osc_3_view;
 
+	Slider filtFreq;
+	std::unique_ptr<AudioProcessorValueTreeState::SliderAttachment> freqAttachment;
+
+	Slider filtQ;
+	std::unique_ptr<AudioProcessorValueTreeState::SliderAttachment> qAttachment;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OrenjiAudioProcessorEditor)
 };

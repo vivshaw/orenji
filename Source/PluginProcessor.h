@@ -49,6 +49,9 @@ public:
 private:
     //==============================================================================
 	Synthesiser synth;
-	
+	IIRFilter filter_r;
+	IIRFilter filter_l;
+	double samples;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OrenjiAudioProcessor)
 };

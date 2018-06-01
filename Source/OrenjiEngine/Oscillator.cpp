@@ -13,8 +13,10 @@ Oscillator::Oscillator(std::string oscName)
 {
 	m_amplitude = 0.125;
 	m_frequency = 440;
+	
 	m_fine = 1.0;
 	m_coarse = 0.0;
+
 	m_phase = 0.0;
 	m_waveform = new Sine();
 
